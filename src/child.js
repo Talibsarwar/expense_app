@@ -10,7 +10,7 @@ function Child() {
     const handleAddition = (event)=> {
             event.preventDefault();
             addTransaction({
-                amount: newAmount,
+                amount: Number(newAmount),
                 desc: newDesc
             })
     }
