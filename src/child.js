@@ -14,6 +14,25 @@ function Child() {
                 desc: newDesc
             })
     }
+
+    const getIncome = () => {
+        let income = 0;
+        for (var i = 0; i < transactions.length; i++){
+         if (transactions[i].amount > 0)
+            income += transactions[i].amount
+        }
+        return income;
+    }
+
+const getExpense = () => {
+    let expense = 0;
+    for (var i = 0; i < transactions.length; i++){
+        if (transactions[i].amount > 0)
+            expense += transactions[i].amount
+    }
+    return expense;
+}
+
     return (
         <div className="container">
             <h1 className="text-center">Expense Tracker</h1>
