@@ -27,7 +27,7 @@ function Child() {
 const getExpense = () => {
     let expense = 0;
     for (var i = 0; i < transactions.length; i++){
-        if (transactions[i].amount > 0)
+        if (transactions[i].amount < 0)
             expense += transactions[i].amount
     }
     return expense;
@@ -40,8 +40,8 @@ const getExpense = () => {
             <h3>Your Balance <br /> PKR3000</h3>
 
             <div className="expense-container">
-                <h3>INCOME <br /> PKR3000</h3>
-                <h3>EXPENSE <br /> PKR900</h3>
+                <h3>INCOME <br /> {getIncome()}</h3>
+                <h3>EXPENSE <br /> {getExpense()}</h3>
             </div>
             
             <div className="history">History</div>
