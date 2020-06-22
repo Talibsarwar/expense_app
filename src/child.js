@@ -37,7 +37,7 @@ const getExpense = () => {
         <div className="container">
             <h1 className="text-center">Expense Tracker</h1>
 
-            <h3>Your Balance <br /> {getIncome() - getExpense()}</h3>
+            <h3>Your Balance <br /> {getIncome() + getExpense()}</h3>
 
             <div className="expense-container">
                 <h3>INCOME <br /> {getIncome()}</h3>
