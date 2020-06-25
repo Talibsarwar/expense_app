@@ -89,6 +89,7 @@ function Child() {
                 <br />
                 <input type="submit" value="Add Transaction"/>
             </form>
+            <h1 className="Rights">Created by Talib Sarwar</h1>
         </div>
     );
 }
