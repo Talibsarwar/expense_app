@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { TransactionContext } from './transContext';
 
 function Child() {
-    let { transactions, addTransaction } = useContext(TransactionContext);
+    let { transactions, addTransaction, deleteTransaction } = useContext(TransactionContext);
 
     let [newDesc, setDesc] = useState("");
     let [newAmount, setAmount] = useState(0);
@@ -19,6 +19,10 @@ function Child() {
         });
         setDesc('');
         setAmount(0)
+    }
+
+    const handleDeletion = (index) => {
+        deleteTransaction(index)
     }
 
     const getIncome = () => {
@@ -53,10 +57,11 @@ function Child() {
             <div className="history">History</div>
             <hr />
             <ul className="transaction-list">
-                {transactions.map((transObj, ind) => {
-                    return (<li>
+                {transactions.map((transObj, index) => {
+                    return (<li key={index} className={transObj.amount < 0 ? 'expense-li' : 'income-li'}>
+                        <button className='del' onClick={ () => handleDeletion(index) }>X</button>
                         <span>{transObj.desc}</span>
-                        <span>PKR{transObj.amount}</span>
+                        <span className="Price">PKR{transObj.amount}</span>
                     </li>)
                 })}
 
@@ -82,7 +87,7 @@ function Child() {
                         required />
                 </label>
                 <br />
-                <input type="submit" value="Add Transaction" />
+                <input type="submit" value="Add Transaction"/>
             </form>
         </div>
     );

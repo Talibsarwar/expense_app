@@ -3,7 +3,6 @@
   min-height: 450px;
   margin: 0 auto;
   background-image: url(./images/backgroundimage.jpg);
-  /*background-color: #efefef;*/
   box-shadow: 0 0 10px gray;
   margin-top: 50px;
   padding: 15px 50px;
@@ -16,23 +15,33 @@
 .expense-container{
   display: flex;
   justify-content: space-around;
+  text-align: center;
   background-color: white;
   box-shadow: 0 0 10px gray;
 }
 
 .transaction-list{
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .transaction-list > li{
+    position: relative;
+    box-shadow: 0 0 10px gray;
+    padding: 10px 15px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.transaction-list > li > .transaction {
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 0 10px gray;
-  padding: 10px 15px;
-  background-color: white;
-  margin: 5px 0;
-  border-radius: 4px;
+}
+
+.Price{
+  float: right;
 }
 
 .history{
@@ -43,4 +52,29 @@
                   width: 95%;
                   margin: 10px 0;
                   padding: 5px 0;
+}
+
+.income-li {
+  border-right: 5px solid green;
+}
+
+.expense-li {
+  border-right: 5px solid red;
+  
+}
+
+.del{
+  position: absolute;
+    background-color: lightcoral;
+    top: 9px;
+    left: -30px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.del:hover {
+    opacity: 1;
 }
