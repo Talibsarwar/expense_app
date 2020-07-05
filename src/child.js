@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { TransactionContext } from './transContext';
+import './App.css';
 
 function Child() {
     let { transactions, addTransaction, deleteTransaction } = useContext(TransactionContext);
@@ -89,7 +90,6 @@ function Child() {
                 <br />
                 <input type="submit" value="Add Transaction"/>
             </form>
-            <h1 className="Rights">Created by Talib Sarwar</h1>
         </div>
     );
 }
