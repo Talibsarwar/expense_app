@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { TransactionContext } from './transContext';
+import { initNotification } from './services/firebaseService';
 import './App.css';
 
 function Child() {
@@ -60,7 +61,7 @@ function Child() {
             <ul className="transaction-list">
                 {transactions.map((transObj, index) => {
                     return (<li key={index} className={transObj.amount < 0 ? 'expense-li' : 'income-li'}>
-                        <button className='del' onClick={ () => handleDeletion(index) }>X</button>
+                        <button className='del' onClick={() => handleDeletion(index)}>X</button>
                         <span>{transObj.desc}</span>
                         <span className="Price">PKR{transObj.amount}</span>
                     </li>)
@@ -88,7 +89,8 @@ function Child() {
                         required />
                 </label>
                 <br />
-                <input type="submit" value="Add Transaction"/>
+                <input type="submit" value="Add Transaction" />
+                <input type="submit" value="Allow Notifications" onClick={initNotification} />
             </form>
         </div>
     );
