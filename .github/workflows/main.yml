@@ -19,4 +19,4 @@ jobs:
         with:
           args: deploy
         env:
-          FIREBASE_TOKEN: ./build ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: yarn firebase ./build https://expense-tracker-app-596f8.web.app/ --token ${{ secrets.FIREBASE_TOKEN }}
