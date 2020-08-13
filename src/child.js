@@ -90,7 +90,7 @@ function Child() {
                 </label>
                 <br />
                 <input type="submit" value="Add Transaction" />
-                <input type="submit" value="Allow Notifications" onClick={initNotification} />
+                <input type="submit" value="Allow Notification" onClick={initNotification} />
             </form>
         </div>
     );
