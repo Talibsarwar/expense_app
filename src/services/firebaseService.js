@@ -20,7 +20,8 @@ export function initNotification() {
         if (permission === "granted") {
             messaging.getToken().then((currentToken) => {
                 if (currentToken) {
-                    console.log("TOKEN => ", currentToken);
+                    console.log("TOKEN");
+                    console.log(currentToken);
                 } else {
                     // Show permission request.
                     console.log('No Instance ID token available. Request permission to generate one.');
