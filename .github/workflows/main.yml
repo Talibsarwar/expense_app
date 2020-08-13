@@ -1,20 +1,22 @@
-name: Build and Deploy
+name: deploy_to_firebase_hosting
+
 on:
   push:
-    branches:
-    - main
+    tags:
+      - release-production-*
+
 jobs:
-  main:
-    name: Build and Deploy
+  deploy_to_firebase_hosting:
+
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Check out code
-      uses: actions/checkout@master
-    - name: Build Hugo
-      uses: lowply/build-hugo@v0.68.3
-    - name: Deploy to Firebase
-      uses: lowply/deploy-firebase@v0.0.3
-      env:
-        FIREBASE_TOKEN: https://expense-tracker-app-596f8.web.app/ ${{ secrets.FIREBASE_TOKEN }}
-        FIREBASE_PROJECT: Expense Tracker App
-        TARGET_BRANCH: main
+      - name: Checkout the repository
+        uses: actions/checkout@master
+      
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
