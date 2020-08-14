@@ -14,7 +14,7 @@ after_success:
 deploy:
   provider: firebase
   skip_cleanup: true
-  domain: expense-tracker-app-596f8.firebaseapp.com/
+  domain: https://expense-tracker-app-596f8.web.app/
   project: ./build/
 
 on: 
