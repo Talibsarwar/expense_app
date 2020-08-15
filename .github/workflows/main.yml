@@ -38,4 +38,4 @@ jobs:
       run:  yarn global add firebase
       
     - name: deploying firebase app
-      run:  yarn firebase https://expense-tracker-app-596f8.web.app/ --token ${{secrets.FIREBASE_TOKEN}}
+      run:  yarn firebase --token ${{secrets.FIREBASE_TOKEN}}
