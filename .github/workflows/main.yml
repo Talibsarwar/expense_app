@@ -34,6 +34,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only https://expense-tracker-app-596f8.web.app/
+          args: deploy --only hosting:expense-tracker-app-596f8.web.app
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
