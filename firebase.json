@@ -1,10 +1,17 @@
 {
   "hosting": {
+    "site": "expense-tracker-app-596f8.web.app",
     "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+        "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
