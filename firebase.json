@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "https://console.firebase.google.com/project/expense-tracker-app-596f8/",
+    "site": "https://console.firebase.google.com/project/expense-tracker-app-596f8/overview",
     "public": "build",
     "ignore": [
       "firebase.json",
