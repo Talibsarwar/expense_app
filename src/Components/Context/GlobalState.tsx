@@ -1,4 +1,4 @@
-import React, { useReducer, Dispatch } from "react";
+import React, { useReducer, Dispatch, useEffect } from "react";
 import { First } from "../../types";
 import { Actions } from "../../types";
 
@@ -13,10 +13,14 @@ const initialState: First = {
     ],
 };
 
+const localTrans = localStorage.getItem('transactions')
+if (localTrans) initialState.transactions = (JSON.parse(localTrans))
+
 export const UserContext = React.createContext<{
     state: First;
     dispatch: Dispatch<Actions>;
 }>({ state: initialState, dispatch: () => null });
+
 const reducer = (state: First, action: Actions) => {
     switch (action.type) {
         case "ADD_TRANSACTION":
@@ -47,6 +51,10 @@ const reducer = (state: First, action: Actions) => {
 
 export const GlobalState: React.FC<{}> = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+
+    useEffect(() => {
+        localStorage.setItem('transactions', JSON.stringify(state.transactions))
+    }, [state.transactions])
 
     return (
         <UserContext.Provider value={{ state, dispatch }}>
