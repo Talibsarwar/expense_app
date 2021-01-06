@@ -10,7 +10,7 @@
     "@types/dinero.js": "^1.6.5",
     "@types/yup": "^0.29.6",
     "antd": "^4.6.2",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "dinero.js": "^1.8.1",
     "firebase": "^7.17.2",
